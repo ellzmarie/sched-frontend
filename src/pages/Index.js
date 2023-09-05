@@ -51,59 +51,90 @@ function Index(props) {
     //     ))
     // }
 
-    const loading = () => {
-        return <h1>Loading...</h1>
-    }
+    // const loading = () => {
+    //     return <h1>Loading...</h1>
+    // }
     return (
-        <section>
+        <section className="create-contact">
             <form onSubmit={handleSubmit}>
-                <input
+                First and Last Name: <input
                 type="text"
                 value={newForm.name}
                 name="name"
+                required
                 placeholder="name"
                 onChange={handleChange}
                 />
 
-                <input 
+                <p>                
+                Email: <input 
                 type="text"
                 value={newForm.email}
-                email="email"
+                name="email"
+                required
                 placeholder="email"
                 onChange={handleChange}
                 />
-                
-                <input
+                </p>
+
+                <p>
+                Phone: <input
                 type="text"
                 value={newForm.phone}
-                phone="phone"
-                placeholder="phone"
+                name="phone"
+                required
+                placeholder="(XXX)XXX-XXXX"
                 onChange={handleChange}
                 />
+                </p>
 
-                <input 
+                <p>
+                Enter a time: 
+                </p>
+                <p><input 
                 type="text"
-                value={newForm.desiredTime}
-                desiredTime="desiredTime"
+                value={newForm.desiredTime} //&& {newForm.amPm} && {newForm.timezone}}
+                name="desiredTime"
+                required
                 placeholder="time"
                 onChange={handleChange}
                 />
+                </p>
 
+                <p>
                 <input 
                 type="text"
                 value={newForm.amPm}
-                amPm="amPm"
+                name="amPm"
+                required
                 placeholder="AM/PM"
                 onChange={handleChange}
                 />
+                </p>
 
-                <input
+                <p>
+               <input
                 type="text"
                 value={newForm.timezone}
-                timezone="timezone"
+                name="timezone"
+                required
                 placeholder="timezone"
                 onChange={handleChange}
                 />
+                </p>
+
+                <p>
+                Please enter the organization you're associated with and any details that will help us prepare for our meeting below
+                </p>
+                <p>
+                <input 
+                type="text"
+                // value={newForm.notes}
+                // name="notes"
+                // placeholder="enter notes"
+                // onChange={handleChange}
+                />
+                </p>
 
                 <input type="submit" value="Create Contact" />
             </form>
