@@ -9,7 +9,8 @@ function Index(props) {
         phone: "",
         desiredTime: "",
         amPm: "",
-        timezone: ""
+        timezone: "",
+        notes: ""
     })
 
     let navigate = useNavigate();
@@ -33,7 +34,8 @@ function Index(props) {
             phone: "",
             desiredTime: "",
             amPm: "",
-            timezone: ""            
+            timezone: "",
+            notes: ""            
         })
         navigate("/")
     }
@@ -57,39 +59,38 @@ function Index(props) {
     return (
         <section className="create-contact">
             <form onSubmit={handleSubmit}>
-                First and Last Name: <input
+                First and Last Name: 
+                <p><input
                 type="text"
                 value={newForm.name}
                 name="name"
                 required
                 placeholder="name"
                 onChange={handleChange}
-                />
+                /></p>
 
-                <p>                
-                Email: <input 
+                <p>Email:</p> 
+                <p><input 
                 type="text"
                 value={newForm.email}
                 name="email"
                 required
                 placeholder="email"
                 onChange={handleChange}
-                />
-                </p>
+                /></p>
 
-                <p>
-                Phone: <input
+                <p>Phone:</p> 
+                <p><input
                 type="text"
                 value={newForm.phone}
                 name="phone"
                 required
                 placeholder="(XXX)XXX-XXXX"
                 onChange={handleChange}
-                />
-                </p>
+                /></p>
 
                 <p>
-                Enter a time: 
+                Enter a time (I'd like this to be a drop down menu): 
                 </p>
                 <p><input 
                 type="text"
@@ -99,20 +100,16 @@ function Index(props) {
                 placeholder="time"
                 onChange={handleChange}
                 />
-                </p>
 
-                <p>
                 <input 
                 type="text"
                 value={newForm.amPm}
                 name="amPm"
                 required
-                placeholder="AM/PM"
+                placeholder="am/pm"
                 onChange={handleChange}
                 />
-                </p>
 
-                <p>
                <input
                 type="text"
                 value={newForm.timezone}
@@ -124,15 +121,16 @@ function Index(props) {
                 </p>
 
                 <p>
-                Please enter the organization you're associated with and any details that will help us prepare for our meeting below
+                Please enter the organization you're associated with and any details that will help us prepare for our meeting:
                 </p>
                 <p>
-                <input 
+                <textarea 
                 type="text"
-                // value={newForm.notes}
-                // name="notes"
-                // placeholder="enter notes"
-                // onChange={handleChange}
+                row={6}
+                value={newForm.notes}
+                name="notes"
+                placeholder="enter notes"
+                onChange={handleChange}
                 />
                 </p>
 
