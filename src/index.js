@@ -1,19 +1,16 @@
 import React from 'react';
-// IMPORT SCSS FILE TO BE SOURCE OF STYLING
-import "./styles.scss"
-// IMPORT ROUTER
-import { BrowserRouter as Router } from "react-router-dom"
-import ReactDOM from 'react-dom/contact';
+import ReactDOM from 'react-dom/client';
+import './index.css'
 import App from './App';
+import "./styles.scss"
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <Router>
       <App />
     </Router>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
