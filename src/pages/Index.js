@@ -1,5 +1,5 @@
-import { useState } from "react"
-// import { Link } from "react-router-dom"
+import { React, useState } from "react"
+import { useParams, useNavigate } from "react-router-dom"
 
 function Index(props) {
     // state to hold form data
@@ -12,16 +12,13 @@ function Index(props) {
         timezone: ""
     })
 
+    let navigate = useNavigate();
+
     // handleChange function for form
     const handleChange = (event) => {
         setNewForm((prevState) => ({
             ...prevState,
             [event.target.name]: event.target.value,
-            // [event.target.email]: event.target.value,
-            // [event.target.phone]: event.target.value,
-            // [event.target.desiredTime]: event.target.value,
-            // [event.target.amPm]: event.target.value,
-            // [event.target.timezone]: event.target.value,
         }))
     }
 
@@ -29,6 +26,7 @@ function Index(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         props.createContacts(newForm)
+
         setNewForm({
             name: "",
             email: "",
@@ -37,20 +35,21 @@ function Index(props) {
             amPm: "",
             timezone: ""            
         })
+        navigate("/")
     }
 
-    const loaded = () => {
-        return props.contacts.map((contact) => (
-            <div key={contact._id} className="contact">
-                <h2>Name: {contact.name}</h2>
-                <h3>Email: {contact.email}</h3>
-                <h3>Phone number: {contact.phone}</h3>
-                <h3>Desired Time: {contact.desiredTime}</h3> 
-                <h5>AM/PM: {contact.amPm}</h5> 
-                <h5>Timezone: {contact.timezone}</h5>
-            </div>
-        ))
-    }
+    // const loaded = () => {
+    //     return props.contacts.map((contact) => (
+    //         <div key={contact._id} className="contact">
+    //             <h2>Name: {contact.name}</h2>
+    //             <h3>Email: {contact.email}</h3>
+    //             <h3>Phone number: {contact.phone}</h3>
+    //             <h3>Desired Time: {contact.desiredTime}</h3> 
+    //             <h5>AM/PM: {contact.amPm}</h5> 
+    //             <h5>Timezone: {contact.timezone}</h5>
+    //         </div>
+    //     ))
+    // }
 
     const loading = () => {
         return <h1>Loading...</h1>
@@ -109,7 +108,7 @@ function Index(props) {
                 <input type="submit" value="Create Contact" />
             </form>
      
-    {props.contacts ? loaded() : loading()}
+    {/* {props.contacts ? loaded() : loading()} */}
     </section>
 
     )}
