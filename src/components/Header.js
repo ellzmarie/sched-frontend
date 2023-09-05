@@ -3,11 +3,12 @@ import { Link } from "react-router-dom"
 
 function Header(props) {
     return (
-      <nav className="nav">
+      <div className="header">
         <Link to="/">
-          <div>Contact App</div>
+              {/* <img className="rhombus-icon" src=""></img> */}
+              <h1 className="app-name">Rhombus Logo Here</h1>
         </Link>
-      </nav>
+      </div>
     )
   }
   
