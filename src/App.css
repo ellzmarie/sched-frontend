@@ -1,7 +1,23 @@
 .App {
-  text-align: center;
   background-color: white;
   font-family: 'Fjalla One', sans-serif;
+}
+
+/* .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+
+.letsChat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sched {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -20,6 +36,15 @@
 
 .create-contact {
   align-items: flex-start;
+  position:relative; 
+  padding:10px;
+  left: 100px;
+}
+
+input, textarea {
+  padding: 15px;
+  width: 75%;
+  margin-bottom: 20px;
 }
 
 

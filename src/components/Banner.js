@@ -1,13 +1,15 @@
+
+
 function Banner(props) {
-    return (
-        <div className="banner">
-            <div className="banner2">
-                <h2>Let's Chat!</h2>
-            </div>
-            <div className="banner3">
-                <h4>Schedule time with a Technical Support Engineer</h4>
-            </div>
-        </div>
+  return (
+  <div className="banner">
+    <h2 className="letsChat">Let's Chat!</h2>
+    <p></p>
+    <p>
+    <h4 className="sched">Schedule time with a Technical Support Engineer</h4>
+    </p>
+  </div>
+      
     )
 }
 
